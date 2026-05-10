@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Weight Gain Plan — 10kg in 6 Months</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B0F09;
+  --surface: #131810;
+  --card: #1A2117;
+  --card-hover: #1F2820;
+  --border: #2C3828;
+  --accent: #A3E635;
+  --accent-dark: #6B9E1F;
+  --accent-glow: rgba(163,230,53,0.12);
+  --amber: #FCD34D;
+  --amber-bg: rgba(252,211,77,0.1);
+  --red: #F87171;
+  --red-bg: rgba(248,113,113,0.1);
+  --blue: #60A5FA;
+  --blue-bg: rgba(96,165,250,0.1);
+  --text: #EEF0E8;
+  --text-muted: #7A8C70;
+  --text-faint: #4A5A42;
+  --serif: 'DM Serif Display', serif;
+  --sans: 'Outfit', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* ── Nav ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,15,9,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(1rem,5vw,4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--card);
+  color: var(--text);
+}
+
+/* ── Sections ── */
+section {
+  padding: clamp(3rem,8vw,6rem) clamp(1rem,5vw,4rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+/* ── Hero ── */
+#hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem,6vw,5rem) clamp(1rem,5vw,4rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  max-width: 700px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover { border-color: var(--accent-dark); }
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-num.accent { color: var(--accent); }
+.stat-num.red { color: var(--red); }
+.stat-num.amber { color: var(--amber); }
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-bg-text {
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-size: clamp(8rem, 18vw, 16rem);
+  color: rgba(163,230,53,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* ── Analysis cards ── */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.card:hover { border-color: var(--accent-dark); background: var(--card-hover); }
+
+.card-icon {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.card-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* BMI bar */
+.bmi-bar {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 38px;
+  margin: 1.5rem 0 1rem;
+}
+
+.bmi-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  flex: 1;
+  transition: flex 0.3s;
+}
+
+.bmi-segment span { font-size: 9px; font-weight: 400; opacity: 0.8; margin-top: 1px; }
+
+.bmi-marker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.bmi-marker::before {
+  content: '▼';
+  font-size: 10px;
+}
+
+/* ── Diet section ── */
+.meal-grid { display: flex; flex-direction: column; gap: 14px; }
+
+.meal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.meal-card:hover { border-color: var(--accent-dark); }
+
+.meal-header {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.meal-time-block {
+  text-align: center;
+  background: var(--accent-glow);
+  border: 1px solid rgba(163,230,53,0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.meal-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+}
+
+.meal-number {
+  font-size: 10px;
+  color: var(--text-faint);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meal-info {}
+.meal-name { font-weight: 600; font-size: 15px; color: var(--text); }
+.meal-tagline { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+.meal-macros {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.meal-kcal { font-family: var(--serif); font-size: 1.1rem; color: var(--accent); line-height: 1; }
+.meal-kcal-label { font-size: 10px; color: var(--text-faint); }
+.meal-protein { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+.meal-body {
+  padding: 0 1.5rem 1.3rem;
+  display: none;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+}
+
+.meal-body.open { display: block; }
+
+.meal-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.food-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+
+.food-pill {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.food-pill.primary {
+  background: rgba(163,230,53,0.1);
+  border-color: rgba(163,230,53,0.25);
+  color: var(--accent);
+}
+
+.food-pill.alt {
+  background: var(--amber-bg);
+  border-color: rgba(252,211,77,0.25);
+  color: var(--amber);
+}
+
+.meal-note {
+  font-size: 12px;
+  color: var(--text-faint);
+  border-left: 2px solid var(--border);
+  padding-left: 10px;
+  margin-top: 4px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1rem 0;
+}
+
+/* Calorie progress */
+.cal-summary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.cal-row:last-child { border-bottom: none; }
+.cal-row-label { color: var(--text-muted); }
+.cal-row-val { font-weight: 600; color: var(--text); }
+.cal-row-val.accent { color: var(--accent); }
+
+/* ── Gym section ── */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.day-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.day-block.active { border-color: var(--accent-dark); background: var(--accent-glow); }
+.day-block.rest { opacity: 0.5; }
+
+.day-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.day-block.active .day-name { color: var(--accent); }
+
+.day-type {
+  font-size: 11px;
+  color: var(--text-faint);
+  line-height: 1.4;
+}
+
+.day-block.active .day-type { color: var(--text); font-weight: 500; }
+
+.workout-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.workout-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(163,230,53,0.05);
+}
+
+.workout-day-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.workout-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.workout-duration {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--card);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.exercise-table { width: 100%; border-collapse: collapse; }
+.exercise-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 10px 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.exercise-table td {
+  padding: 10px 1.5rem;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(44,56,40,0.5);
+  vertical-align: top;
+}
+
+.exercise-table tr:last-child td { border-bottom: none; }
+.exercise-table tr:hover td { background: rgba(163,230,53,0.03); }
+
+.ex-name-cell { font-weight: 500; color: var(--text); }
+.ex-note { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+.ex-sets { color: var(--accent); font-weight: 600; }
+.ex-rest { color: var(--text-muted); }
+
+.phase-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.phase-1 { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
+.phase-2 { background: rgba(163,230,53,0.1); color: var(--accent); border: 1px solid rgba(163,230,53,0.2); }
+
+/* ── Supplements ── */
+.supp-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.supp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  transition: all 0.2s;
+}
+
+.supp-card:hover { border-color: var(--accent-dark); }
+.supp-card-name { font-weight: 600; font-size: 15px; color: var(--text); margin-bottom: 3px; }
+.supp-dose { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
+.supp-why { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.supp-brand { font-size: 11px; color: var(--text-faint); margin-top: 5px; }
+
+.priority {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.p-must { background: rgba(248,113,113,0.12); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
+.p-good { background: rgba(163,230,53,0.1); color: var(--accent); border: 1px solid rgba(163,230,53,0.2); }
+.p-opt { background: rgba(252,211,77,0.1); color: var(--amber); border: 1px solid rgba(252,211,77,0.2); }
+
+/* ── Cost section ── */
+.cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+
+.cost-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cost-card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cost-card-title { font-weight: 600; font-size: 14px; color: var(--text); }
+.cost-card-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 1.5rem;
+  border-bottom: 1px solid rgba(44,56,40,0.5);
+  font-size: 13px;
+}
+
+.cost-row:last-child { border-bottom: none; }
+.cost-item { color: var(--text-muted); }
+.cost-price { font-weight: 600; color: var(--text); font-family: var(--serif); font-size: 14px; }
+
+.cost-total {
+  background: var(--accent-glow);
+  border: 1px solid rgba(163,230,53,0.2);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.cost-total-label { font-weight: 600; font-size: 14px; color: var(--text); }
+.cost-total-val { font-family: var(--serif); font-size: 1.6rem; color: var(--accent); }
+
+/* ── Rules ── */
+.rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+
+.rule-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  transition: all 0.2s;
+}
+
+.rule-card:hover { border-color: var(--accent-dark); }
+
+.rule-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.5;
+  margin-top: -4px;
+}
+
+.rule-title { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 5px; }
+.rule-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+.rule-card.danger { border-color: rgba(248,113,113,0.2); }
+.rule-card.danger .rule-num { color: var(--red); }
+
+/* ── Timeline ── */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 100px 24px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.tl-month {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: right;
+  padding-top: 2px;
+}
+
+.tl-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.tl-connector {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  min-height: 40px;
+}
+
+.tl-item:last-child .tl-connector { display: none; }
+
+.tl-content {
+  padding-bottom: 2rem;
+}
+
+.tl-title { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+.tl-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.tl-badge { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-top: 6px; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem clamp(1rem,5vw,4rem);
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+footer span { color: var(--accent); }
+
+/* ── Accordion chevron ── */
+.chevron {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.meal-header.open .chevron { transform: rotate(180deg); background: var(--accent-glow); color: var(--accent); }
+
+/* ── Tag ── */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tag-green { background: rgba(163,230,53,0.1); color: var(--accent); border: 1px solid rgba(163,230,53,0.2); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(252,211,77,0.2); }
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(96,165,250,0.2); }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .week-grid { grid-template-columns: repeat(4, 1fr); }
+  .meal-header { grid-template-columns: 70px 1fr; }
+  .meal-macros { display: none; }
+  .hero-bg-text { display: none; }
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow { animation: fadeUp 0.5s ease both; }
+.hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+.hero-desc { animation: fadeUp 0.6s 0.2s ease both; }
+.hero-stats { animation: fadeUp 0.6s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">My Health Plan</div>
+  <ul class="nav-links">
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#diet">Diet</a></li>
+    <li><a href="#gym">Gym</a></li>
+    <li><a href="#supplements">Supplements</a></li>
+    <li><a href="#cost">Cost</a></li>
+    <li><a href="#rules">Rules</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">+10kg</div>
+  <div class="hero-eyebrow">Personal Weight Gain Program</div>
+  <h1 class="hero-title">
+    From <em>40kg</em><br>to 50kg.<br>In 6 months.
+  </h1>
+  <p class="hero-desc">
+    A complete, personal plan built specifically for my body — with simple Indian vegetarian meals, a beginner gym routine, and everything I need to gain healthy weight and finally feel strong.
+  </p>
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-num red">14.7</div>
+      <div class="stat-label">Current BMI — severely underweight</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">40 kg</div>
+      <div class="stat-label">Current weight at 5'5"</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num accent">50 kg</div>
+      <div class="stat-label">Goal — Month 6 target</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num amber">2600</div>
+      <div class="stat-label">Daily calories needed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">90g</div>
+      <div class="stat-label">Daily protein minimum</div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH ANALYSIS -->
+<section id="analysis">
+  <div class="section-label">Section 01 — Health Analysis</div>
+  <h2 class="section-title">Understanding my body</h2>
+  <p class="section-sub">Before fixing the problem, I need to understand exactly where I stand and what's causing it.</p>
+
+  <!-- BMI bar -->
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="card-title" style="margin-bottom: 1rem;">Where I stand on the BMI scale</div>
+    <div class="bmi-bar">
+      <div class="bmi-segment" style="background:#7F1D1D; color:#FCA5A5; flex:1.5">SEVERE <span>&lt;16</span></div>
+      <div class="bmi-segment" style="background:#78350F; color:#FCD34D; flex:1.5">UNDER <span>16–18.5</span></div>
+      <div class="bmi-segment" style="background:#14532D; color:#86EFAC; flex:2">NORMAL <span>18.5–24.9</span></div>
+      <div class="bmi-segment" style="background:#78350F; color:#FCD34D; flex:1.5">OVER <span>25–29.9</span></div>
+      <div class="bmi-segment" style="background:#7F1D1D; color:#FCA5A5; flex:1.5">OBESE <span>&gt;30</span></div>
+    </div>
+    <div class="bmi-marker">I am at BMI 14.7 — in the severely underweight range</div>
+    <div class="card-body">To reach a healthy BMI of 18.5, I need to weigh at least <strong style="color:var(--text)">51.6 kg</strong>. My 6-month target of <strong style="color:var(--accent)">50 kg</strong> gets me very close to that mark.</div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom: 1.5rem;">
+    <div class="card">
+      <span class="card-icon">🩺</span>
+      <div class="card-title">Confirmed deficiency</div>
+      <div class="card-body">My blood tests show only <strong style="color:var(--red)">Vitamin D deficiency</strong>. This directly affects my oral health — low Vitamin D is a primary cause of recurring mouth ulcers. It also weakens my immune system and reduces muscle recovery ability.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">⚡</span>
+      <div class="card-title">Why I look weak</div>
+      <div class="card-body">At 40 kg / 5'5", I have very little muscle mass. My body doesn't have reserves. This makes me visibly thin and fatigues quickly. The fix is <strong style="color:var(--accent)">caloric surplus + resistance training</strong> — eating more than my body burns while building muscle.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">🫀</span>
+      <div class="card-title">Mouth ulcers — root cause</div>
+      <div class="card-body">The ulcers are triggered by junk food (MSG, maida, spices) + Vitamin D deficiency. My stomach also reacts because the gut lining is sensitized. As my nutrition and Vitamin D levels improve, ulcer frequency will reduce significantly.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">📈</span>
+      <div class="card-title">Is 10 kg in 6 months possible?</div>
+      <div class="card-body"><strong style="color:var(--accent)">Yes — very achievable</strong> for a 19-year-old. That's ~0.4 kg/week, which is a healthy and realistic rate. The key requirements: consistent caloric surplus daily, resistance training 3×/week, and 8+ hours of sleep every night.</div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 1.5rem;">My 6-month roadmap</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-month">Month 1–2</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Foundation & Adjustment</div>
+          <div class="tl-body">Body adjusts to eating more. Expect slow gains — 0.5–1 kg. This is normal. Focus on building the meal habit, not the scale. Start home workouts.</div>
+          <span class="tl-badge tag-blue">Target: 41–42 kg</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 3–4</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Momentum phase</div>
+          <div class="tl-body">Vitamin D levels recover. Appetite increases naturally. Join gym if not already. Visible changes in body — clothes fit differently. Energy levels noticeably higher.</div>
+          <span class="tl-badge tag-amber">Target: 45–47 kg</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-month">Month 5–6</div>
+        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+        <div class="tl-content">
+          <div class="tl-title">Strong phase</div>
+          <div class="tl-body">Significant muscle definition forming. Ulcer episodes becoming rare. Parents notice the change. Weight approaching 50 kg. Move to heavier gym weights.</div>
+          <span class="tl-badge tag-green">Target: 50 kg ✓</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIET -->
+<section id="diet">
+  <div class="section-label">Section 02 — Diet Plan</div>
+  <h2 class="section-title">Simple. Consistent. Effective.</h2>
+  <p class="section-sub">6 meals per day. Every meal has a main option and a backup alternative. No complicated recipes — all regular Indian home food.</p>
+
+  <div class="meal-grid">
+
+    <!-- Meal 1 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">7:00 AM</span>
+          <span class="meal-number">Meal 1</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Morning Kickstart</div>
+          <div class="meal-tagline">Wake up & fuel before the day starts</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">250</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~10g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main — eat this daily</div>
+        <div class="food-list">
+          <span class="food-pill primary">1 glass full-fat milk (warm)</span>
+          <span class="food-pill primary">5 soaked almonds</span>
+          <span class="food-pill primary">2 walnuts</span>
+        </div>
+        <div class="meal-section-label">Alternative — if no milk available</div>
+        <div class="food-list">
+          <span class="food-pill alt">1 large banana</span>
+          <span class="food-pill alt">2 tbsp peanut butter (on bread)</span>
+        </div>
+        <div class="meal-note">Soak almonds overnight — removes tannins, easier to digest and better nutrient absorption. Walnuts are best eaten raw.</div>
+      </div>
+    </div>
+
+    <!-- Meal 2 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">9:00 AM</span>
+          <span class="meal-number">Meal 2</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Breakfast — The Heavy Meal</div>
+          <div class="meal-tagline">Biggest calorie load of the day — never skip this</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">680</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~26g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main option</div>
+        <div class="food-list">
+          <span class="food-pill primary">3 aloo/gobhi parathas</span>
+          <span class="food-pill primary">2 tsp ghee (on parathas)</span>
+          <span class="food-pill primary">1 bowl curd / dahi</span>
+          <span class="food-pill primary">1 glass milk or chaas</span>
+        </div>
+        <div class="meal-section-label">Alternative</div>
+        <div class="food-list">
+          <span class="food-pill alt">2 large bowls poha with peanuts</span>
+          <span class="food-pill alt">1 glass full-fat milk</span>
+          <span class="food-pill alt">1 banana</span>
+        </div>
+        <div class="meal-note">Apply ghee generously — it's healthy fat and adds 40 kcal per tsp. Curd adds probiotics which help my sensitive gut.</div>
+      </div>
+    </div>
+
+    <!-- Meal 3 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">1:00 PM</span>
+          <span class="meal-number">Meal 3</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Lunch — The Protein Meal</div>
+          <div class="meal-tagline">Dal + paneer + roti = the perfect weight gain combo</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">720</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~30g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main option</div>
+        <div class="food-list">
+          <span class="food-pill primary">3–4 rotis with ghee</span>
+          <span class="food-pill primary">1 bowl masoor/toor dal</span>
+          <span class="food-pill primary">100g paneer sabzi</span>
+          <span class="food-pill primary">1 katori curd</span>
+        </div>
+        <div class="meal-section-label">Alternative (3×/week)</div>
+        <div class="food-list">
+          <span class="food-pill alt">1.5 cups rice + ghee</span>
+          <span class="food-pill alt">1 bowl rajma or chana</span>
+          <span class="food-pill alt">1 bowl curd</span>
+        </div>
+        <div class="meal-note">Alternate paneer meals and rajma/chana meals through the week for varied protein sources. Always finish with curd — it aids protein digestion.</div>
+      </div>
+    </div>
+
+    <!-- Meal 4 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">4:30 PM</span>
+          <span class="meal-number">Meal 4</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Evening Snack — Energy Refuel</div>
+          <div class="meal-tagline">Pre-workout fuel or afternoon energy boost</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">380</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~12g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main option — banana smoothie</div>
+        <div class="food-list">
+          <span class="food-pill primary">2 ripe bananas</span>
+          <span class="food-pill primary">1 glass full-fat milk</span>
+          <span class="food-pill primary">1 tsp honey</span>
+        </div>
+        <div class="meal-section-label">Alternative</div>
+        <div class="food-list">
+          <span class="food-pill alt">2 slices bread + 2 tbsp peanut butter</span>
+          <span class="food-pill alt">1 banana</span>
+        </div>
+        <div class="meal-section-label">Or (quick option)</div>
+        <div class="food-list">
+          <span class="food-pill alt">1 bowl soaked chana chaat</span>
+          <span class="food-pill alt">+ lemon + salt + zeera</span>
+        </div>
+        <div class="meal-note">If going to gym in the evening, have this 45–60 minutes before training. The banana provides quick energy and the milk gives pre-workout protein.</div>
+      </div>
+    </div>
+
+    <!-- Meal 5 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">8:30 PM</span>
+          <span class="meal-number">Meal 5</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Dinner — Muscle Repair Meal</div>
+          <div class="meal-tagline">Eat within 1 hour of finishing gym</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">620</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~22g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main option</div>
+        <div class="food-list">
+          <span class="food-pill primary">3 rotis with ghee</span>
+          <span class="food-pill primary">1 bowl dal (any)</span>
+          <span class="food-pill primary">1 katori sabzi</span>
+          <span class="food-pill primary">1 katori curd</span>
+        </div>
+        <div class="meal-section-label">Alternative (lighter / easier)</div>
+        <div class="food-list">
+          <span class="food-pill alt">Moong dal khichdi (1.5 bowls)</span>
+          <span class="food-pill alt">1 tsp ghee on top</span>
+          <span class="food-pill alt">1 bowl curd</span>
+        </div>
+        <div class="meal-note">Khichdi is actually an ideal weight-gain dinner — easy to digest, protein-rich from moong, and the ghee adds healthy calories. On days I feel full, khichdi is better than skipping dinner.</div>
+      </div>
+    </div>
+
+    <!-- Meal 6 -->
+    <div class="meal-card">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-time-block">
+          <span class="meal-time">10:30 PM</span>
+          <span class="meal-number">Meal 6</span>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name">Bedtime — Night Recovery</div>
+          <div class="meal-tagline">Casein-like slow protein while I sleep</div>
+        </div>
+        <div class="meal-macros">
+          <div class="meal-kcal">180</div>
+          <div class="meal-kcal-label">kcal</div>
+          <div class="meal-protein">~8g protein</div>
+        </div>
+        <div class="chevron">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-section-label">Main option</div>
+        <div class="food-list">
+          <span class="food-pill primary">1 glass warm turmeric milk (haldi doodh)</span>
+          <span class="food-pill primary">½ tsp ghee in milk</span>
+        </div>
+        <div class="meal-section-label">Alternative</div>
+        <div class="food-list">
+          <span class="food-pill alt">1 glass warm full-fat milk</span>
+          <span class="food-pill alt">+ 1 tsp peanut butter stirred in</span>
+        </div>
+        <div class="meal-note">Warm milk before bed gives slow-digesting protein through the night — exactly when muscles are repairing. Haldi has anti-inflammatory benefits which also reduces ulcer risk.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Daily Total -->
+  <div class="cal-summary">
+    <div style="font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 1rem;">Daily nutrition total</div>
+    <div class="cal-row"><span class="cal-row-label">Total calories</span><span class="cal-row-val accent">~2,630 kcal</span></div>
+    <div class="cal-row"><span class="cal-row-label">Total protein</span><span class="cal-row-val">~108g</span></div>
+    <div class="cal-row"><span class="cal-row-label">Total meals/day</span><span class="cal-row-val">6 meals</span></div>
+    <div class="cal-row"><span class="cal-row-label">Caloric surplus (over maintenance)</span><span class="cal-row-val accent">~700–900 kcal/day</span></div>
+    <div class="cal-row"><span class="cal-row-label">Expected gain rate</span><span class="cal-row-val">0.3–0.5 kg / week</span></div>
+    <div class="cal-row"><span class="cal-row-label">Junk food / street food</span><span class="cal-row-val" style="color:var(--red)">Zero — triggers ulcers</span></div>
+  </div>
+</section>
+
+<!-- GYM -->
+<section id="gym">
+  <div class="section-label">Section 03 — Gym & Exercise</div>
+  <h2 class="section-title">Build muscle, not just fat.</h2>
+  <p class="section-sub">3 days per week is enough. Focus on compound movements that work multiple muscle groups. Add weight every 2 weeks — this is the rule.</p>
+
+  <!-- Week view -->
+  <div class="week-grid">
+    <div class="day-block active">
+      <div class="day-name">Mon</div>
+      <div class="day-type">Full Body A</div>
+    </div>
+    <div class="day-block rest">
+      <div class="day-name">Tue</div>
+      <div class="day-type">Rest / walk</div>
+    </div>
+    <div class="day-block active">
+      <div class="day-name">Wed</div>
+      <div class="day-type">Full Body B</div>
+    </div>
+    <div class="day-block rest">
+      <div class="day-name">Thu</div>
+      <div class="day-type">Rest / walk</div>
+    </div>
+    <div class="day-block active">
+      <div class="day-name">Fri</div>
+      <div class="day-type">Full Body C</div>
+    </div>
+    <div class="day-block rest">
+      <div class="day-name">Sat</div>
+      <div class="day-type">Active rest</div>
+    </div>
+    <div class="day-block rest">
+      <div class="day-name">Sun</div>
+      <div class="day-type">Full rest</div>
+    </div>
+  </div>
+
+  <!-- Phase 1 label -->
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:1rem;">
+    <span class="phase-tag phase-1">Phase 1 — Weeks 1–6 (Home / No Gym)</span>
+    <span style="font-size:13px; color:var(--text-muted)">Bodyweight only. Build habit first.</span>
+  </div>
+
+  <!-- Workout A -->
+  <div class="workout-card">
+    <div class="workout-header">
+      <div>
+        <div class="workout-day-tag">Monday — Workout A</div>
+        <div class="workout-name">Push + Legs focus</div>
+      </div>
+      <div class="workout-duration">35–40 min</div>
+    </div>
+    <table class="exercise-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Exercise</th>
+          <th>Sets × Reps</th>
+          <th>Rest</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell">Bodyweight Squat</div><div class="ex-note">Keep chest up, go below parallel</div></td>
+          <td class="ex-sets">3 × 15</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Most important exercise — legs = biggest muscles = most growth hormone</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Push-ups</div><div class="ex-note">Wide grip for chest, narrow for triceps</div></td>
+          <td class="ex-sets">3 × 12</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">If too hard: do on knees. If too easy: elevate feet</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Dumbbell Row (or water bottle)</div><div class="ex-note">Each arm separately</div></td>
+          <td class="ex-sets">3 × 12</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Back + bicep. Use anything heavy — bag with books works too</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Plank</div><div class="ex-note">Straight body, don't let hips sag</div></td>
+          <td class="ex-sets">3 × 30 sec</td>
+          <td class="ex-rest">45 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Core foundation — essential for all other lifts</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Workout B -->
+  <div class="workout-card">
+    <div class="workout-header">
+      <div>
+        <div class="workout-day-tag">Wednesday — Workout B</div>
+        <div class="workout-name">Pull + Posterior Chain</div>
+      </div>
+      <div class="workout-duration">35–40 min</div>
+    </div>
+    <table class="exercise-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Exercise</th>
+          <th>Sets × Reps</th>
+          <th>Rest</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell">Romanian Deadlift (light dumbbells)</div><div class="ex-note">Hinge at hips, feel hamstrings stretch</div></td>
+          <td class="ex-sets">3 × 10</td>
+          <td class="ex-rest">75 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Builds entire posterior chain — most underrated beginner exercise</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Glute Bridge</div><div class="ex-note">Squeeze glutes hard at top, hold 1 sec</div></td>
+          <td class="ex-sets">3 × 15</td>
+          <td class="ex-rest">45 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Builds glutes + lower back — adds mass to lower body</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Pike Push-up</div><div class="ex-note">Body in inverted V, lower head to floor</div></td>
+          <td class="ex-sets">3 × 10</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Shoulder development — builds broad upper body look</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Superman Hold</div><div class="ex-note">Lie face down, lift arms + legs, hold</div></td>
+          <td class="ex-sets">3 × 12</td>
+          <td class="ex-rest">45 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Lower back + spinal erectors — prevents injury as weights increase</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Workout C -->
+  <div class="workout-card">
+    <div class="workout-header">
+      <div>
+        <div class="workout-day-tag">Friday — Workout C</div>
+        <div class="workout-name">Full Body + Core Finisher</div>
+      </div>
+      <div class="workout-duration">40–45 min</div>
+    </div>
+    <table class="exercise-table">
+      <thead>
+        <tr>
+          <th style="width:40%">Exercise</th>
+          <th>Sets × Reps</th>
+          <th>Rest</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="ex-name-cell">Goblet Squat (with heavy object)</div><div class="ex-note">Hold weight at chest, squat deep</div></td>
+          <td class="ex-sets">3 × 12</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Better depth than regular squat — hits quads more</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Dips (using 2 chairs)</div><div class="ex-note">Lower until arms at 90°, push back up</div></td>
+          <td class="ex-sets">3 × 10</td>
+          <td class="ex-rest">60 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Excellent tricep + chest builder with no equipment</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Resistance Band Pull-apart (or towel)</div><div class="ex-note">Hold ends, pull apart to chest level</div></td>
+          <td class="ex-sets">3 × 15</td>
+          <td class="ex-rest">45 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Rear deltoid + upper back — improves posture dramatically</td>
+        </tr>
+        <tr>
+          <td><div class="ex-name-cell">Dead Bug (core)</div><div class="ex-note">Lie flat, extend opposite arm + leg slowly</div></td>
+          <td class="ex-sets">3 × 10</td>
+          <td class="ex-rest">45 sec</td>
+          <td style="color:var(--text-muted); font-size:12px">Best core exercise for beginners — protects lower back</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Phase 2 label -->
+  <div style="display:flex; align-items:center; gap:12px; margin: 1.5rem 0 1rem;">
+    <span class="phase-tag phase-2">Phase 2 — Month 2+ (Gym)</span>
+    <span style="font-size:13px; color:var(--text-muted)">Replace home exercises with these gym lifts.</span>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Replace home exercises with:</div>
+      <div style="font-size:13px; color:var(--text-muted); line-height:2;">
+        Bodyweight Squat → <strong style="color:var(--accent)">Barbell Squat</strong><br>
+        Push-up → <strong style="color:var(--accent)">Bench Press</strong><br>
+        Dumbbell Row → <strong style="color:var(--accent)">Cable Row / Barbell Row</strong><br>
+        Pike Push-up → <strong style="color:var(--accent)">Overhead Press (barbell)</strong><br>
+        Deadlift → <strong style="color:var(--accent)">Conventional Deadlift</strong><br>
+        Dips → <strong style="color:var(--accent)">Weighted Dips / Tricep Pushdown</strong>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Progressive overload rule</div>
+      <div class="card-body" style="line-height:2;">
+        Week 1–2: Learn the form, light weight<br>
+        Week 3–4: Add <strong style="color:var(--accent)">2.5 kg</strong> per exercise<br>
+        Week 5–6: Add another <strong style="color:var(--accent)">2.5 kg</strong><br>
+        If I can do all reps easily → add weight next session<br>
+        If I can't complete reps → keep same weight<br>
+        <span style="color:var(--red); font-size:12px">Never skip leg day — legs = 60% of muscle mass</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 14px; border-color: rgba(248,113,113,0.2);">
+    <div class="card-title" style="color:var(--red);">⚠️ Critical gym rules</div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-top:10px;">
+      <div style="font-size:13px; color:var(--text-muted);">🍌 <strong style="color:var(--text)">Eat within 45 min after every workout</strong> — milk + banana minimum. This is the muscle-building window.</div>
+      <div style="font-size:13px; color:var(--text-muted);">🚫 <strong style="color:var(--text)">Zero running or heavy cardio</strong> — burns 400–600 kcal/session. I need every calorie for gaining.</div>
+      <div style="font-size:13px; color:var(--text-muted);">🍽️ <strong style="color:var(--text)">Never train on empty stomach</strong> — eat a small meal 45–60 min before gym or performance suffers badly.</div>
+      <div style="font-size:13px; color:var(--text-muted);">😴 <strong style="color:var(--text)">Sleep is training too</strong> — 80% of muscle repair happens in deep sleep. Less than 7 hours = wasted gym session.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPLEMENTS -->
+<section id="supplements">
+  <div class="section-label">Section 04 — Supplements</div>
+  <h2 class="section-title">Only what matters.</h2>
+  <p class="section-sub">Four supplements. Three are essential. One is optional after Month 1. Supplements support food — they cannot replace it.</p>
+
+  <div class="supp-grid">
+    <div class="supp-card">
+      <div>
+        <div class="supp-card-name">Vitamin D3 + K2</div>
+        <div class="supp-dose">D3: 60,000 IU weekly (as doctor prescribed) · K2 MK-7: 100 mcg daily</div>
+        <div class="supp-why">Directly linked to my mouth ulcers and immune weakness. D3 reduces ulcer frequency and severity. K2 helps D3 direct calcium to bones (not arteries) — always take them together.</div>
+        <div class="supp-brand">Brands: Uprise D3 / Calcirol sachets (D3) · NatureVit K2 (K2)</div>
+      </div>
+      <span class="priority p-must">Must take</span>
+    </div>
+    <div class="supp-card">
+      <div>
+        <div class="supp-card-name">Vitamin B-Complex</div>
+        <div class="supp-dose">1 tablet daily with breakfast</div>
+        <div class="supp-why">Improves energy levels, appetite, and nerve function. Also reduces mouth ulcer episodes. Contains B12 (vegetarian gap), B6, B9 (folate). Cheap and highly effective — no reason not to take this.</div>
+        <div class="supp-brand">Brands: Becosules capsules · Neurobion Forte · Supradyn</div>
+      </div>
+      <span class="priority p-must">Must take</span>
+    </div>
+    <div class="supp-card">
+      <div>
+        <div class="supp-card-name">Zinc (Zincovit)</div>
+        <div class="supp-dose">1 tablet daily with food (10–15 mg zinc)</div>
+        <div class="supp-why">Vegetarian diets have lower zinc bioavailability than non-veg. Zinc is critical for: muscle repair after training, wound healing, testosterone production, and immune defense in the mouth lining.</div>
+        <div class="supp-brand">Brands: Zincovit · Zinc-B Tablet · Zimotide</div>
+      </div>
+      <span class="priority p-must">Must take</span>
+    </div>
+    <div class="supp-card">
+      <div>
+        <div class="supp-card-name">Whey / Soy Protein Powder</div>
+        <div class="supp-dose">1 scoop (25g protein) in milk after workout — start only after Month 1</div>
+        <div class="supp-why">Helps reach 90g+ daily protein when food intake falls short. Not needed if eating all 6 meals consistently. Soy isolate is the best plant-based option — complete amino acid profile, equivalent to whey for muscle building.</div>
+        <div class="supp-brand">Brands: MuscleBlaze Biozyme Whey · Oziva Plant Protein · Nakpro Soy Isolate</div>
+      </div>
+      <span class="priority p-good">Optional (Month 2+)</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 14px;">
+    <div class="card-title">Monthly supplement cost estimate</div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-top:10px;">
+      <div style="font-size:13px;"><span style="color:var(--text-muted);">Vitamin D3 sachet pack</span><br><strong style="color:var(--accent);">₹100–150</strong></div>
+      <div style="font-size:13px;"><span style="color:var(--text-muted);">Becosules B-Complex</span><br><strong style="color:var(--accent);">₹50–70</strong></div>
+      <div style="font-size:13px;"><span style="color:var(--text-muted);">Zincovit (zinc)</span><br><strong style="color:var(--accent);">₹80–120</strong></div>
+      <div style="font-size:13px;"><span style="color:var(--text-muted);">Protein powder (optional)</span><br><strong style="color:var(--amber);">₹1,200–2,000</strong></div>
+    </div>
+    <div style="margin-top:12px; padding-top:12px; border-top:1px solid var(--border); font-size:13px; color:var(--text-muted);">
+      Essential supplements only: <strong style="color:var(--accent);">₹230–340/month</strong> &nbsp;·&nbsp; With protein powder: <strong style="color:var(--amber);">₹1,400–2,340/month</strong>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section id="cost">
+  <div class="section-label">Section 05 — Monthly Cost</div>
+  <h2 class="section-title">What this actually costs.</h2>
+  <p class="section-sub">All prices estimated for Indore, Madhya Pradesh. Base family meals are already covered — these are only the additional items needed for my weight gain plan.</p>
+
+  <div class="cost-grid">
+    <div class="cost-card">
+      <div class="cost-card-header">
+        <div>
+          <div class="cost-card-title">Extra food purchases</div>
+          <div class="cost-card-subtitle">Above normal family grocery budget</div>
+        </div>
+        <span class="tag tag-green">Monthly</span>
+      </div>
+      <div class="cost-row"><span class="cost-item">Extra milk (500ml/day beyond family)</span><span class="cost-price">₹850–1,000</span></div>
+      <div class="cost-row"><span class="cost-item">Paneer (1.5 kg/month)</span><span class="cost-price">₹600–750</span></div>
+      <div class="cost-row"><span class="cost-item">Peanut butter (2 × 500g jars)</span><span class="cost-price">₹400–600</span></div>
+      <div class="cost-row"><span class="cost-item">Bananas (2/day × 30 days)</span><span class="cost-price">₹300–400</span></div>
+      <div class="cost-row"><span class="cost-item">Almonds (100g) + Walnuts (60g)</span><span class="cost-price">₹400–500</span></div>
+      <div class="cost-row"><span class="cost-item">Curd extra packs</span><span class="cost-price">₹150–200</span></div>
+      <div class="cost-row"><span class="cost-item">Rajma / Chana / Sprouts (extra)</span><span class="cost-price">₹120–160</span></div>
+      <div style="padding: 12px 1.5rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between;">
+        <span style="font-weight:600; font-size:14px; color:var(--text);">Food subtotal</span>
+        <span style="font-family:var(--serif); font-size:1.2rem; color:var(--accent);">₹2,820–3,610</span>
+      </div>
+    </div>
+
+    <div class="cost-card">
+      <div class="cost-card-header">
+        <div>
+          <div class="cost-card-title">Supplements</div>
+          <div class="cost-card-subtitle">Essential only (no protein powder)</div>
+        </div>
+        <span class="tag tag-green">Monthly</span>
+      </div>
+      <div class="cost-row"><span class="cost-item">Vitamin D3 sachets (prescribed)</span><span class="cost-price">₹100–150</span></div>
+      <div class="cost-row"><span class="cost-item">K2 MK-7 supplement</span><span class="cost-price">₹80–120</span></div>
+      <div class="cost-row"><span class="cost-item">Becosules B-Complex (strip)</span><span class="cost-price">₹50–70</span></div>
+      <div class="cost-row"><span class="cost-item">Zincovit tablet (strip)</span><span class="cost-price">₹80–120</span></div>
+      <div style="padding: 12px 1.5rem; border-top: 1px solid var(--border); display:flex; justify-content:space-between;">
+        <span style="font-weight:600; font-size:14px; color:var(--text);">Supplements subtotal</span>
+        <span style="font-family:var(--serif); font-size:1.2rem; color:var(--accent);">₹310–460</span>
+      </div>
+      <div class="cost-row" style="border-top: 1px solid var(--border);"><span class="cost-item">+ Protein powder (optional)</span><span class="cost-price" style="color:var(--amber);">₹1,200–2,000</span></div>
+    </div>
+  </div>
+
+  <div class="cost-total">
+    <div>
+      <div class="cost-total-label">Total monthly investment (essential plan)</div>
+      <div style="font-size:12px; color:var(--text-muted); margin-top:3px;">Food additions + supplements · No protein powder</div>
+    </div>
+    <div class="cost-total-val">₹3,200–4,100</div>
+  </div>
+
+  <div style="margin-top:12px; padding:1rem 1.5rem; background:var(--card); border:1px solid var(--border); border-radius:10px;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+      <div style="font-size:13px; color:var(--text-muted);">With protein powder: <strong style="color:var(--amber);">₹4,400–6,100/month</strong></div>
+      <div style="font-size:13px; color:var(--text-muted);">Per day cost (essential): <strong style="color:var(--accent);">₹106–137/day</strong></div>
+      <div style="font-size:13px; color:var(--text-muted);">Gym membership (Indore): <strong style="color:var(--text);">₹500–1,200/month</strong></div>
+      <div style="font-size:13px; color:var(--text-muted);">Total 6-month cost: <strong style="color:var(--text);">~₹19,200–31,800</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section id="rules">
+  <div class="section-label">Section 06 — Non-Negotiable Rules</div>
+  <h2 class="section-title">The habits that make or break this.</h2>
+  <p class="section-sub">Diet and gym are the plan. These rules are the execution. Ignoring even two of these will slow progress by 50%.</p>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div>
+        <div class="rule-title">Never skip a meal</div>
+        <div class="rule-body">Skipping one meal = 400–700 calories lost. This is the single biggest reason underweight people stay underweight. Set phone alarms for meal times if needed.</div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div>
+        <div class="rule-title">Eat even when not hungry</div>
+        <div class="rule-body">At 40 kg, my appetite signals are suppressed. My stomach is small. I need to eat on a schedule, not when I feel hungry. Hunger will follow consistent eating within 3–4 weeks.</div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div>
+        <div class="rule-title">Sleep 8+ hours, every night</div>
+        <div class="rule-body">Growth hormone is released during deep sleep. 70% of muscle repair happens at night. Bad sleep = wasted diet + gym work. This is as important as eating.</div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div>
+        <div class="rule-title">Drink water between meals, not before</div>
+        <div class="rule-body">Drinking water just before eating fills the stomach and reduces food intake. Drink water 30 minutes after meals. Stay hydrated at 2.5L/day total.</div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">05</div>
+      <div>
+        <div class="rule-title">Add ghee to everything</div>
+        <div class="rule-body">Ghee is not unhealthy. It's one of the best calorie-dense foods for vegetarians. 1 tsp = 45 kcal. Add to roti, dal, rice, khichdi. It adds up to 200–300 extra kcal daily with minimal effort.</div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">06</div>
+      <div>
+        <div class="rule-title">15 min morning sunlight — daily</div>
+        <div class="rule-body">Helps the body produce Vitamin D naturally alongside supplements. Sets the circadian rhythm for better sleep. Improves mood and energy levels. Free and zero effort.</div>
+      </div>
+    </div>
+    <div class="rule-card danger">
+      <div class="rule-num">✗</div>
+      <div>
+        <div class="rule-title">Zero junk food or outside food</div>
+        <div class="rule-body">Momos, spicy street food, packaged chips — these trigger my mouth ulcers and disrupt my gut. Not just for this month. For the entire 6-month program. No exceptions.</div>
+      </div>
+    </div>
+    <div class="rule-card danger">
+      <div class="rule-num">✗</div>
+      <div>
+        <div class="rule-title">Zero cardio (no running)</div>
+        <div class="rule-body">Running burns 400–600 kcal per session — calories my body urgently needs for gaining. After reaching 55 kg, I can add light cardio for fitness. Not before.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final motivational card -->
+  <div style="margin-top: 2rem; background: var(--accent-glow); border: 1px solid rgba(163,230,53,0.25); border-radius: 16px; padding: 2rem 2rem;">
+    <div style="font-family: var(--serif); font-size: clamp(1.2rem, 3vw, 1.6rem); color: var(--accent); margin-bottom: 10px; line-height:1.3;">"The goal is not just 10 kg.<br>The goal is to never look weak again."</div>
+    <div style="font-size: 13px; color: var(--text-muted); max-width: 500px; line-height: 1.75;">
+      Every paratha eaten, every set completed, every night of good sleep — they all compound. At 6 months I'll weigh 50 kg. At 12 months, 60 kg. At 18 months, I'll be the version of myself my parents always imagined.
+    </div>
+    <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:10px;">
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 16px; text-align:center;">
+        <div style="font-family:var(--serif); font-size:1.4rem; color:var(--accent);">+0.4kg</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">per week</div>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 16px; text-align:center;">
+        <div style="font-family:var(--serif); font-size:1.4rem; color:var(--accent);">180</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">days to goal</div>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 16px; text-align:center;">
+        <div style="font-family:var(--serif); font-size:1.4rem; color:var(--accent);">72</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">gym sessions</div>
+      </div>
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:8px; padding:10px 16px; text-align:center;">
+        <div style="font-family:var(--serif); font-size:1.4rem; color:var(--accent);">1,080</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">meals to eat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="margin-bottom: 8px;">Built with intention · Personal Health Plan 2025–2026</div>
+  <div>Made with help from <span>Claude (Anthropic)</span> · All figures are guidelines, not medical prescriptions.</div>
+  <div style="margin-top: 8px; color: var(--text-faint);">For a vegetarian, 19 years old, 5'5", Indore, Madhya Pradesh</div>
+</footer>
+
+<script>
+function toggleMeal(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.meal-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.meal-header').forEach(h => h.classList.remove('open'));
+  if (!isOpen) {
+    body.classList.add('open');
+    header.classList.add('open');
+  }
+}
+
+// Smooth number animation on load
+function animateValue(el, start, end, duration) {
+  let startTime = null;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    el.textContent = Math.floor(progress * (end - start) + start);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// Open first meal by default on load
+window.addEventListener('load', () => {
+  const first = document.querySelector('.meal-header');
+  if (first) toggleMeal(first);
+});
+</script>
+</body>
+</html>
